@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="plonesocial.auth.rpx">
+
+    <include package="plone.app.portlets" />
+
+    <plone:portlet
+         name="plonesocial.auth.rpx.portlets.RPXPortlet"
+         interface=".rpxportlet.IRPXPortlet"
+         assignment=".rpxportlet.Assignment"
+         view_permission="zope2.View"
+         edit_permission="cmf.ManagePortal"
+         renderer=".rpxportlet.Renderer"
+         addview=".rpxportlet.AddForm"
+         />
+
+</configure>

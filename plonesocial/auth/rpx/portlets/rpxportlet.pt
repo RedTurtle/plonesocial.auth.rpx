@@ -1,0 +1,36 @@
+<tal:block condition="view/show"
+		   i18n:domain="plonesocial.auth.rpx">
+<dl class="portlet">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <span i18n:translate="rpx_portlet_header">
+           Sign in with
+        </span>
+        <span class="portletTopRight"></span>
+    </dt>
+
+	<dd class="portletItem odd"
+	    tal:define="rpx_view view/rpx_view">
+		<script src="https://rpxnow.com/openid/v2/widget"
+		        type="text/javascript"></script>
+		<script type="text/javascript"
+				tal:content="view/popup_js">
+		</script>
+		
+		<tal:providers repeat="provider view/providers">
+	        <a class="rpxnow"
+	           href="#"
+	           tal:attributes="href string:${view/popup_url}?token_url=${view/token_url};
+			                   id string:${provider/id}"
+	           tal:condition="rpx_view/rpx_is_configured"
+			   tal:content="structure provider/icon_tag">
+	        </a>
+		</tal:providers>
+
+        <metal:warning use-macro="here/rpx_macros/macros/rpx_warning" />
+		
+	</dd>
+
+</dl>
+</tal:block>

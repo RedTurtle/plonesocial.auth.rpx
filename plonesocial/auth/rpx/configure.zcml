@@ -1,0 +1,31 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="plonesocial.auth.rpx">
+
+    <five:registerPackage package="." initialize=".initialize" />
+    <include package=".browser" />
+    <include package=".portlets" />
+    <include file="skins.zcml" />
+
+    <!-- Register the installation GenericSetup extension profile -->
+    <genericsetup:registerProfile
+      name="default"
+      title="RPX-Authentication"
+      directory="profiles/default"
+      description="Adds RPX based third party authentication support to Plone"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+    <i18n:registerTranslations directory="locales"/>
+  
+    <utility
+	    component=".providers.ProvidersVocabularyFactory"
+	    name="plonesocial.auth.rpx.Providers"
+	    />
+
+  
+</configure>

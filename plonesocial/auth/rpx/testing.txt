@@ -1,0 +1,44 @@
+Tests for plonesocial.auth.rpx
+
+test setup
+----------
+
+    >>> from Testing.ZopeTestCase import user_password
+    >>> from Products.Five.testbrowser import Browser
+    >>> browser = Browser()
+
+Plugin setup
+------------
+
+    >>> acl_users_url = "%s/acl_users" % self.portal.absolute_url()
+    >>> browser.addHeader('Authorization', 'Basic %s:%s' % ('portal_owner', user_password))
+    >>> browser.open("%s/manage_main" % acl_users_url)
+    >>> browser.url
+    'http://nohost/plone/acl_users/manage_main'
+    >>> form = browser.getForm(index=0)
+    >>> select = form.getControl(name=':action')
+
+plonesocial.auth.rpx should be in the list of installable plugins:
+
+    >>> 'Rpx Helper' in select.displayOptions
+    True
+
+and we can select it:
+
+    >>> select.getControl('Rpx Helper').click()
+    >>> select.displayValue
+    ['Rpx Helper']
+    >>> select.value
+    ['manage_addProduct/plonesocial.auth.rpx/manage_add_rpx_helper_form']
+
+we add 'Rpx Helper' to acl_users:
+
+    >>> from plonesocial.auth.rpx.plugin import RpxHelper
+    >>> myhelper = RpxHelper('myplugin', 'Rpx Helper')
+    >>> self.portal.acl_users['myplugin'] = myhelper
+
+and so on. Continue your tests here
+
+    >>> 'ALL OK'
+    'ALL OK'
+

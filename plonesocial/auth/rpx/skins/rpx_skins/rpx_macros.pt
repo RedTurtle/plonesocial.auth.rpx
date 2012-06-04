@@ -1,0 +1,155 @@
+<tal:rpx i18n:domain="plonesocial.auth.rpx">
+
+<metal:rpx_warning define-macro="rpx_warning">
+    <dl class="portalMessage warning"
+        tal:condition="not:rpx_view/rpx_is_configured">
+        <dt i18n:translate="">
+            Warning
+        </dt>
+        <dd i18n:translate="rpx_not_configured_warning">
+            RPX is not configured. Please go to "RPX Settings" in "Site Setup" to fix this. 
+        </dd>
+    </dl>
+</metal:rpx_warning>
+
+<metal:rpx_register_container define-macro="rpx_register_container">
+    <div id="rpx-register-container">
+      <fieldset>
+      <legend>RPX Login</legend>
+      <h2 i18n:translate="rpx_login_header">Log in with online id</h2>
+      <br />
+            <iframe src="#"
+		        tal:condition="rpx_view/rpx_is_configured"
+	            tal:attributes="src string:${rpx_view/embed_url}?token_url=${rpx_view/token_url}&language_preference=${rpx_view/lang}"
+	            scrolling="no" frameBorder="no" style="width:400px;height:240px;">
+            </iframe>
+			
+			<metal:warning use-macro="here/rpx_macros/macros/rpx_warning" />
+			 
+        </fieldset>
+    </div>
+</metal:rpx_register_container>
+
+<metal:rpx_register define-macro="rpx_register">
+    <fieldset id="login-form">
+        <legend>RPX register</legend>
+        <h2 i18n:translate="rpx_register_heading">Register your <span i18n:name="rpx_provider" tal:content="rpx_provider" /> account</h2>
+        <br />
+        <span i18n:translate="rpx_register_descr">The prefilled data was returned by your online id provider and is just a suggestion.</span>
+        <br />
+        <br />
+        <input class="context"
+               type="button"
+               name="submit_rpx_register"
+               value="Register"
+         onclick="window.location.href="
+         tal:attributes="onclick string:window.location.href='${portal_url}/rpx_join_form'"
+               />
+    </fieldset>
+</metal:rpx_register>
+
+
+
+<metal:rpx_login define-macro="rpx_login">
+<form tal:attributes="action python:context.absolute_url()+'/'+template.id"
+      class="enableAutoFocus"
+      method="post"
+      id="login_form"
+      tal:condition="python:auth">
+
+    <fieldset id="login-form">
+
+        <legend>RPX log in</legend>
+
+        <h2>Login</h2>
+        <br />
+        <span i18n:translate="rpx_login_descr">
+            You have already registered to <span i18n:name="rpx_portal_title" tal:replace="python:context.portal_url.getPortalObject().title_or_id()" /> and now want to assign your <span i18n:name="rpx_provider" tal:content="rpx_provider" /> account to your profile.
+        </span>
+        <br />
+        <br />
+
+        <input type="hidden"
+            name="came_from"
+            value=""
+        tal:attributes="value came_from" />
+
+        <input type="hidden" name="form.submitted" value="1" />
+        <input type="hidden" name="js_enabled" id="js_enabled" value="0" />
+        <input type="hidden" name="cookies_enabled" id="cookies_enabled" value="" />
+        <input type="hidden" name="login_name" id="login_name" value="" />
+        <input type="hidden" name="pwd_empty" id="pwd_empty" value="0" />
+
+        <div class="field"
+             tal:define="error python:errors.get(ac_name, None);"
+             tal:attributes="class python:test(error, 'field error', 'field')">
+
+            <label i18n:translate="label_login_name"
+                   tal:attributes="for ac_name">Login Name</label>
+
+            <div tal:content="error">Validation error output</div>
+
+            <input type="text"
+                   size="15"
+                   tal:attributes="name ac_name;
+                                   id ac_name;
+                                   value rpx_login_name;"
+                   />
+
+    </div>
+
+    <div class="field"
+             tal:define="error python:errors.get(ac_password, None);"
+             tal:attributes="class python:test(error, 'field error', 'field')">
+
+            <label i18n:translate="label_password"
+                   tal:attributes="for ac_password">Password</label>
+
+            <div tal:content="error">Validation error output</div>
+
+            <input type="password"
+                   size="15"
+                   tal:attributes="name ac_password;
+                                   id ac_password;"
+                   />
+    </div>
+
+        <div class="field" tal:condition="ac_persist">
+
+            <input type="checkbox"
+                   class="noborder formRememberName"
+                   value="1"
+                   checked="checked"
+                   id="cb_remember"
+                   tal:attributes="name ac_persist;
+                                   checked python:request.get(ac_name, '') and 'checked' or None;"
+                   />
+
+            <label for="cb_remember" i18n:translate="label_remember_my_name">Remember my name.</label>
+
+            <div i18n:translate="help_remember_my_name"
+                 class="formHelp">
+                Check this to have your user name filled in automatically when you log in later.
+            </div>
+
+        </div>
+
+        <div class="formControls">
+
+            <input class="context"
+                   type="submit"
+                   name="submit_rpx_login"
+                   value="Log in"
+                   i18n:attributes="value label_log_in;"
+                   />
+
+        </div>
+
+    </fieldset>
+
+</form>
+
+
+</metal:rpx_login>
+
+</tal:rpx>

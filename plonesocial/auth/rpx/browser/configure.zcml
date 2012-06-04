@@ -1,0 +1,52 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="plonesocial.auth.rpx">
+
+    <browser:resource
+        file="rpx.js"
+        name="rpx.js"
+        />
+
+    <browser:resource
+        file="rpx.css"
+        name="rpx.css"
+        />
+
+	<browser:resourceDirectory
+		name="plonesocial.auth.rpx.icons"
+		directory="icons"
+		/>
+		
+    <!-- RPX View -->
+    <browser:page
+        for="*"
+        name="rpx_view"
+        class=".rpx_view.RPXView"
+        allowed_interface=".rpx_view.IRPXView"
+        permission="zope.Public"
+        />
+
+    <!-- RPX-Callback View -->
+    <browser:page
+        for="*"
+        name="rpx_callback"
+        class=".rpx_callback.RPXCallback"
+        allowed_interface=".rpx_callback.IRPXCallback"
+        permission="zope.Public"
+        />
+
+	<!-- RPX configlet -->
+    <browser:page
+		for="Products.CMFPlone.Portal.PloneSite"
+		name="rpx_config"
+		class=".configlet.RPXConfigurationForm"
+		permission="cmf.ManagePortal"
+		/>
+    <adapter factory=".configlet.RPXControlPanelAdapter" />
+
+
+
+</configure>

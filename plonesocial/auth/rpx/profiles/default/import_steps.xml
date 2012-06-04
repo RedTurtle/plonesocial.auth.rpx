@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<import-steps>
+  <import-step id="plonesocialauthrpx-various" version="200703161"
+               handler="plonesocial.auth.rpx.setuphandlers.importVarious"
+               title="Setup RPX authentication in Plone">
+    Add RPX authentication support to Plone. This adds a new RPX login
+    portlet and modifies the login form to add RPX support.
+  </import-step>
+</import-steps>

@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+<head>
+    <metal:js fill-slot="javascript_head_slot">
+        <script type="text/javascript"
+              src=""
+              tal:attributes="src string:${portal_url}/login.js">
+      </script>
+    </metal:js>
+    <metal:block fill-slot="top_slot"
+                 tal:define="dummy python:request.set('disable_border',1)" />
+    <metal:block fill-slot="column_one_slot" />
+    <metal:block fill-slot="column_two_slot" />
+</head>
+
+<body>
+
+<div metal:fill-slot="main"
+     tal:define="auth nocall:here/acl_users/credentials_cookie_auth|here/cookie_authentication|nothing;
+                 came_from request/came_from|request/HTTP_REFERER|nothing;
+                 came_from python:test(utool.isURLInPortal(came_from), came_from, None);
+                 errors options/state/getErrors;
+                 ac_name auth/name_cookie|string:__ac_name;
+                 ac_email auth/email_cookie|string:__ac_email;
+                 ac_password auth/pw_cookie|string:__ac_password;
+                 ac_persist auth/persist_cookie|nothing;
+				 rpx_view context/@@rpx_view;
+				 rpx_credentials rpx_view/rpx_credentials;
+                 rpx_login_name python:rpx_credentials.get('preferredUsername');
+                 rpx_email python:rpx_credentials.get('email');
+                 rpx_provider python:rpx_credentials.get('providerName');">
+
+<dl class="portalMessage error"
+    id="enable_cookies_message"
+    style="display:none">
+    <dt i18n:translate="">
+        Error
+    </dt>
+    <dd i18n:translate="enable_cookies_message_before_login">
+        Cookies are not enabled. You must enable cookies before you can log in.
+    </dd>
+</dl>
+
+<div tal:condition="python: not auth" i18n:translate="login_form_disabled">
+    While cookie authentication is disabled, cookie-based login is not available.
+</div>
+
+
+<div id="login-container">
+    <div id="rpx-register-container"
+	     tal:condition="rpx_view/self_register_enabled">
+        <span metal:use-macro="here/rpx_macros/macros/rpx_register" />
+    </div>
+    <div id="rpx-login-container">
+        <span metal:use-macro="here/rpx_macros/macros/rpx_login" />
+    </div>
+</div>
+
+
+</div>
+</body>
+</html>

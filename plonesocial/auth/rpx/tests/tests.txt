@@ -1,0 +1,11 @@
+Setup
+=====
+1. install plugin
+2. create plone user
+
+What to test?
+=============
+1. API key
+2. create plone user with rpx id
+3. add rpx id to existing user
+4. login user with valid rpx id

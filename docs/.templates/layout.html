@@ -1,0 +1,48 @@
+{% extends "!layout.html" %}
+
+{% block relbar1 %}
+    <div id="headercontainer">
+        <div id="headerwrapper">
+            <div id="header">
+                <p class="logo"><img class="logo" src="{{ pathto('_static/logo.png', 1) }}" alt="pydataportability"/></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block document %}
+    <div class="document">
+    {{ relbar() }}
+      <div class="documentwrapper">
+      {%- if builder != 'htmlhelp' %}
+        <div class="bodywrapper">
+      {%- endif %}
+          <div class="body">
+            {% block body %}{% endblock %}
+          </div>
+      {%- if builder != 'htmlhelp' %}
+        </div>
+      {%- endif %}
+      </div>
+{% endblock %}
+
+{% block sidebar2 %}
+    {{ sidebar() }}
+    <div class="clearer" />
+    {{ relbar() }}
+{% endblock %}
+
+{% block relbar2 %}
+{% endblock %}
+
+{%- block footer %}
+    <div class="footer">
+<a href="/impressum">Impressum</a>
+    {%- if last_updated %}
+      Last updated on {{ last_updated }}.
+    {%- endif %}
+    {%- if show_sphinx %}
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    {%- endif %}
+    </div>
+{%- endblock %}
+

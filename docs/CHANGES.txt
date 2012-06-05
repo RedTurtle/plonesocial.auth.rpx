@@ -2,6 +2,8 @@
 0.9 - unreleased
 ****************
 
+ - add Italian translations
+
  - Plone 4 fixes
 
  - Fixed overwriting theme settings when installed.

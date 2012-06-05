@@ -1,21 +1,24 @@
-unreleased
-**********
 
-Fixed overwriting theme settings when installed.
+0.9 - unreleased
+****************
 
-Fixed JS error.
+ - Plone 4 fixes
 
-When RPX is not configured a message is shown instead of showing the link and iframe resulting in a 404 error.
+ - Fixed overwriting theme settings when installed.
 
-Added provider icons.
+ - Fixed JS error.
 
-It is now possible to select providers in the configlet that will be shown as icons in the portlet. When clicking on 
-an icon the rpx overlay opens with the according provider preselected.  
+ - When RPX is not configured a message is shown instead of showing the link and iframe resulting in a 404 error.
+
+ - Added provider icons.
+
+ - It is now possible to select providers in the configlet that will be shown as icons in the portlet. When clicking on 
+   an icon the rpx overlay opens with the according provider preselected.  
 
 
 0.815 - (2010/03/15)
 ********************
 
-initial release
+ - initial release
 
 

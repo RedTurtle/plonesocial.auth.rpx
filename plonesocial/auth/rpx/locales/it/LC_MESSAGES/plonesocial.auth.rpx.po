@@ -16,100 +16,99 @@ msgstr ""
 
 #: ./browser/configlet.py:45
 msgid "Enter your RPX api key"
-msgstr ""
+msgstr "Inserire la propria chiave RPX"
 
 #: ./skins/rpx_skins/login_form_validate.vpy:47
 #: ./skins/rpx_skins/rpx_logged_in.cpy:19
 msgid "Login failed. Both login name and password are case sensitive, check that caps lock is not enabled."
-msgstr ""
+msgstr "Autenticazione fallita. IL sistema discrimina i caratteri maiuscoli e minuscoli: controlla che il tasto 'bloccamaiuscole' (MAIUSC) non sia attivato."
 
 #: ./skins/rpx_skins/login_form_validate.vpy:44
 msgid "Login name not found."
-msgstr ""
+msgstr "Utente non trovato."
 
 #: ./skins/rpx_skins/login_form_validate.vpy:46
 msgid "Password incorrect."
-msgstr ""
+msgstr "Password non corretta."
 
 #: ./skins/rpx_skins/join_form_validate.vpy:17
-msgid "Passwords do not match."
-msgstr ""
+msgid "Passwords do not match." 
+msgstr "Le password inserite non corrispondono."
 
 #: ./skins/rpx_skins/join_form_validate.vpy:19
 msgid "Passwords must contain at least 5 letters."
-msgstr ""
+msgstr "La password deve essere di almeno 5 caratteri"
 
 #: ./skins/rpx_skins/join_form_validate.vpy:59
 #: ./skins/rpx_skins/register.cpy:37
 msgid "Please correct the indicated errors."
-msgstr ""
+msgstr "Prego correggere gli errori segnalati."
 
 #: ./skins/rpx_skins/login_form_validate.vpy:37
-msgid "Please enter your login name."
-msgstr ""
+msgid "Please enter your login name.
+msgstr "Prego, inserire il proprio nome utente."
 
 #: ./skins/rpx_skins/login_form_validate.vpy:39
 msgid "Please enter your password."
-msgstr ""
+msgstr "Prego, inserire la propria password."
 
 #: ./browser/configlet.py:46
 msgid "RPX Settings"
-msgstr ""
+msgstr "Configurazione RPX"
 
 #: ./browser/configlet.py:44
-msgid "RPX settings"
-msgstr ""
+msgid "RPX Settings"
+msgstr "Configurazione RPX"
 
 #: ./skins/rpx_skins/rpx_logged_in.cpy:40
 msgid "The RPX id was mapped to your user."
-msgstr ""
+msgstr "L'identificativo RPX era assegnato al tuo utente."
 
 #: ./skins/rpx_skins/join_form_validate.vpy:48
 #: ./skins/rpx_skins/register.cpy:36
 msgid "The login name you selected is already in use or is not valid. Please choose another."
-msgstr ""
+msgstr "Il nome utente inserito è gia in uso o non è valido. Prego selezionare un nuovo nome utente."
 
 #: ./skins/rpx_skins/join_form_validate.vpy:56
 msgid "This RPX-identifier has already been mapped to a different user."
-msgstr ""
+msgstr "L'identificativo RPX selezionato è già associato ad un altro utente."
 
 #: ./skins/rpx_skins/join_form_validate.vpy:15
 msgid "This field is required, please provide some information."
-msgstr ""
+msgstr "Campo obbligatorio. Inserire le informazioni richieste."
 
 #: ./skins/rpx_skins/join_form_validate.vpy:21
 msgid "This username is reserved. Please choose a different name."
-msgstr ""
+msgstr "Nome utente riservato. Prego selezionare un nome utente diverso."
 
 #: ./skins/rpx_skins/register.cpy:69
 msgid "User added."
-msgstr ""
+msgstr "Utente aggiunto."
 
 #: ./skins/rpx_skins/login_form_validate.vpy:21
 msgid "You must enable cookies before you can log in."
-msgstr ""
+msgstr "Abilitare i ccokies prima di effettuare l'accesso."
 
 #: ./skins/rpx_skins/personalize.cpy:69
-msgid "Your personal settings have been saved."
-msgstr ""
+msgid "You must enable cookies before you can log in."
+msgstr "I tuoi dati personali sono stati salvati con successo."
 
 #. Default: "RPX-Authentication"
 #: ./portlets/rpxportlet.pt:7
 msgid "rpx_portlet_header"
-msgstr ""
+msgstr "Autenticazione RPX"
 
 #. Default: "Sign In"
 #: ./portlets/rpxportlet.pt:20
 msgid "rpx_portlet_signin"
-msgstr ""
+msgstr "Accedi"
 
 #. Default: "Failed to create your account: we were unable to send your password to your email address: ${address}"
 #: ./skins/rpx_skins/register.cpy:55
 msgid "status_fatal_password_mail"
-msgstr ""
+msgstr "Creazione utente fallita. Il sistema non è stato in grado di inviare le credenziali al seguente indirizzo: ${address}"
 
 #. Default: "You account has been created, but we were unable to send your password to your email address: ${address}"
 #: ./skins/rpx_skins/register.cpy:61
 msgid "status_nonfatal_password_mail"
-msgstr ""
-
+msgstr "Utente creato con successo, ma il sistema non è stato in grado di inviare le credenziali al seguente indirizzo: ${address}"

@@ -4,5 +4,6 @@
     <property name="title">RPX properties</property>
     <property name="api_key" type="string"></property>
     <property name="domain" type="string"></property>
+	<property name="providers" type="lines"></property>
  </object>
 </object>

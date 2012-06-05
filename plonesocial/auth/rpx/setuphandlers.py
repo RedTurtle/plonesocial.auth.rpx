@@ -42,14 +42,6 @@ def activatePlugin(portal, out, plugin):
     plugin.manage_activateInterfaces(activate)
 
 
-def addLoginPortlet(portal, out):
-    leftColumn = getUtility(IPortletManager, name=u'plone.leftcolumn', context=portal)
-    left = getMultiAdapter((portal, leftColumn,), IPortletAssignmentMapping, context=portal)
-    if u'rpx-login' not in left:
-        print >>out, "Adding RPX login portlet to the left column"
-        left[u'rpx-login'] = LoginAssignment()
-
-
 def importVarious(context):
     # Only run step if a flag file is present (e.g. not an extension profile)
     if context.readDataFile('rpx-pas.txt') is None:
@@ -62,5 +54,4 @@ def importVarious(context):
         createRPXPlugin(site, out)
         activatePlugin(site, out, "rpx")
 
-    addLoginPortlet(site, out)
 

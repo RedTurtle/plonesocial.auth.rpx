@@ -40,7 +40,8 @@
         class="enableAutoFocus enableUnloadProtection"
         method="post"
         tal:condition="mailconfigured"
-        tal:define="allowEnterPassword site_properties/validate_email|nothing;"
+        tal:define="allowEnterPassword site_properties/validate_email|nothing;
+                    template_id string:${portal_url}/rpx_join_form"
         tal:attributes="action template_id" >
 
       <input type="hidden" name="came_from" value=""

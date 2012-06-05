@@ -15,7 +15,6 @@
 <metal:rpx_register_container define-macro="rpx_register_container">
     <div id="rpx-register-container">
       <fieldset>
-      <legend>RPX Login</legend>
       <h2 i18n:translate="rpx_login_header">Log in with online id</h2>
       <br />
             <iframe src="#"
@@ -32,7 +31,7 @@
 
 <metal:rpx_register define-macro="rpx_register">
     <fieldset id="login-form">
-        <legend>RPX register</legend>
+        <legend><i18n:label translate="rpx_register_legend">RPX register</i18n:label></legend>
         <h2 i18n:translate="rpx_register_heading">Register your <span i18n:name="rpx_provider" tal:content="rpx_provider" /> account</h2>
         <br />
         <span i18n:translate="rpx_register_descr">The prefilled data was returned by your online id provider and is just a suggestion.</span>
@@ -42,6 +41,7 @@
                type="button"
                name="submit_rpx_register"
                value="Register"
+			   i18n:attributes="value register_button"
          onclick="window.location.href="
          tal:attributes="onclick string:window.location.href='${portal_url}/rpx_join_form'"
                />
@@ -59,9 +59,9 @@
 
     <fieldset id="login-form">
 
-        <legend>RPX log in</legend>
+        <legend><i18n:label translate="rpx_login_legend">RPX log in</i18n:label></legend>
 
-        <h2>Login</h2>
+        <h2><i18n:label translate="rpx_assign_legend">Login</i18n:label></h2>
         <br />
         <span i18n:translate="rpx_login_descr">
             You have already registered to <span i18n:name="rpx_portal_title" tal:replace="python:context.portal_url.getPortalObject().title_or_id()" /> and now want to assign your <span i18n:name="rpx_provider" tal:content="rpx_provider" /> account to your profile.

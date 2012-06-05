@@ -6,11 +6,11 @@
 <portlets>
   <!-- -*- extra stuff goes here -*- -->
 
-   <portlet
-     addview="plonesocial.auth.rpx.portlets.RPXPortlet"
-     title="RPX-Auth portlet"
-     description=""
-	 for="plone.app.portlets.interfaces.IColumn"
-   />
+    <portlet
+        addview="plonesocial.auth.rpx.portlets.RPXPortlet"
+        title="RPX-Auth portlet"
+        description="">
+        <for interface="plone.app.portlets.interfaces.IColumn"/>
+    </portlet>
 
 </portlets>

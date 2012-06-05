@@ -1,7 +1,12 @@
-from zope.app.schema.vocabulary import IVocabularyFactory
 from zope.interface import implements
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
+
+try:
+    from zope.app.schema.vocabulary import IVocabularyFactory
+except ImportError:
+    from zope.schema.interfaces import IVocabularyFactory
+    
 
 from plonesocial.auth.rpx.config import RPX_PROVIDERS
 
@@ -21,12 +26,12 @@ ProvidersVocabularyFactory = ProvidersVocabulary()
 
 
 class Provider(object):
-    """ represents a provider """#
+    """ represents a provider """
     
     def __init__(self, id):
         self.id = id
         self.title = RPX_PROVIDERS[self.id]
-        self.icon_tag = u"<img src='++resource++plonesocial.auth.rpx.icons/%s.png' title='%s' alt='%s'>" % (self.id, self.title, self.title)
+        self.icon_tag = u"<img src='/++resource++plonesocial.auth.rpx.icons/%s.png' title='%s' alt='%s'>" % (self.id, self.title, self.title)
         self.icon_tag_title = u"%s %s" % (self.icon_tag, self.title)
 
 

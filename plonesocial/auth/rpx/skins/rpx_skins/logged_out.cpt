@@ -18,13 +18,14 @@
   <div metal:fill-slot="main"
        tal:define="auth nocall:here/acl_users/credentials_cookie_auth|here/cookie_authentication|nothing;
                    came_from request/came_from|request/HTTP_REFERER|nothing;
-                   came_from python:test(utool.isURLInPortal(came_from), came_from, None);
+                   came_from python:test(context.portal_url.isURLInPortal(came_from), came_from, None);
                    errors options/state/getErrors;
                    ac_name auth/name_cookie|string:__ac_name;
                    ac_password auth/pw_cookie|string:__ac_password;
                    ac_persist auth/persist_cookie|nothing;
 				   rpx_view context/@@rpx_view;
-	               login_name python:request.get('login_name', request.get(ac_name, ''));">
+	               login_name python:request.get('login_name', request.get(ac_name, ''));
+	               isAnon context/@@plone_portal_state/anonymous;">
 
 <tal:reallyloggedout condition="isAnon">
   <h1 class="documentFirstHeading"

@@ -6,12 +6,11 @@
 	text-align: center;
 	margin: 0px auto;
 	text-align: center;
-	width: 850px;
+	width: 420px;
 }
 
 #login-container fieldset, form {
 	display:inline;
-    height:375px;
 	margin: 0 !important;
 	text-align:left;
 }
@@ -19,11 +18,9 @@
 #rpx-register-container {
 	margin-right:10px;
 	text-align:left;
-	float: left;
 }
 
 #rpx-login-container {
 	margin-left:10px;
     text-align:left;
-    float: left;
 }

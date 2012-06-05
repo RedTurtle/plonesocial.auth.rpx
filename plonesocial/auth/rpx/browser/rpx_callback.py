@@ -30,7 +30,7 @@ class RPXCallback(BrowserView):
         else:
             url = self.request.get('came_from')
             if url is not None:
-                self.request.RESPONSE.redirect(url)
+                self.request.RESPONSE.redirect(url[0])
             else:
                 self.request.RESPONSE.redirect(self.portal.absolute_url())
 

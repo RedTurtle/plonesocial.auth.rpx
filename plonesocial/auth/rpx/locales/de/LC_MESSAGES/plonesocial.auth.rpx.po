@@ -76,3 +76,8 @@ msgstr "Die Daten in den vorausgef&uuml;llten Feldern wurden von Ihrem Online-Id
 msgid "rpx_register_heading"
 msgstr "Registrierung &uuml;ber deinen ${rpx_provider} Account"
 
+#. Default: "If you don't have an account from any of the available providers, you can also use a Plone account."
+#: ./skins/rpx_skins/login_form.cpt
+msgid "login_form_orploneaccount"
+msgstr "Wenn Sie bei keinem der zur Auswahl stehenden Anbietern ein Konto haben können Sie sich auch mit einem Plone Konto anmelden."
+

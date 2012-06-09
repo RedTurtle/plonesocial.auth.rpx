@@ -89,8 +89,7 @@ class RPXPlugin(BasePlugin):
                 member = ms_tool.getMemberById(login)
                 if not member:
                     pr_tool = getToolByName(self, 'portal_registration')
-                    import random, string
-                    pr_tool.addMember(login, ''.join([random.choice(string.letters + string.digits) for i in range(8)]))
+                    pr_tool.addMember(login, pr_tool.generatePassword())
                     member = ms_tool.getMemberById(login)
                     credentials['fullname'] = credentials['name']['formatted']
                     

@@ -26,7 +26,7 @@ class RPXCallback(BrowserView):
                 msg = u'RPX authentication has failed. Try again later. You can still register login with your Plone username.'
                 util = self.context.plone_utils
                 util.addPortalMessage(msg, 'error')
-            self.request.RESPONSE.redirect('%s/rpx_login_form' % self.portal.absolute_url())
+            self.request.RESPONSE.redirect('%s/@@rpx_register' % self.portal.absolute_url())
         else:
             url = self.request.get('came_from')
             if url is not None:

@@ -15,12 +15,26 @@
         name="rpx.css"
         />
 
-	<browser:resourceDirectory
-		name="plonesocial.auth.rpx.icons"
-		directory="icons"
-		/>
-		
+    <browser:resourceDirectory
+        name="plonesocial.auth.rpx.icons"
+        directory="icons"
+     />
+
     <!-- RPX View -->
+    <browser:page
+        name="rpx_register"
+        for="plone.app.layout.navigation.interfaces.INavigationRoot"
+        class=".register.RegistrationForm"
+        permission="cmf.AddPortalMember"
+     />
+
+    <browser:page
+        name="rpx_registered"
+        for="plone.app.layout.navigation.interfaces.INavigationRoot"
+        permission="cmf.AddPortalMember"
+        template="rpx_registered.pt"
+     />
+
     <browser:page
         for="*"
         name="rpx_view"

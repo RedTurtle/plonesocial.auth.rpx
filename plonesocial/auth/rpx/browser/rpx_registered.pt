@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+
+<metal:main fill-slot="main"
+     tal:define="auth nocall:context/acl_users/credentials_cookie_auth|nothing">
+
+    <div id="content-core" tal:condition="python: not auth" i18n:translate="registered_disabled">
+           Cookie authentication has been disabled.
+    </div>
+
+    <div tal:omit-tag=""
+         tal:condition="python: auth">
+
+        <h1 class="documentFirstHeading"
+            i18n:translate="heading_welcome">
+            Welcome!
+        </h1>
+
+        <div class="documentDescription" i18n:translate="description_you_are_registered">
+            You have been registered.
+        </div>
+
+        <div id="content-core">
+            <p>More information here...</p>
+        </div>
+
+    </div>
+
+</metal:main>
+</body>
+</html>

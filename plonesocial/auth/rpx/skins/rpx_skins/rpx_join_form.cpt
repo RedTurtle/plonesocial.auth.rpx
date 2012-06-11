@@ -21,8 +21,8 @@
                  mailfrom context/email_from_address|nothing;
                  site_properties context/portal_properties/site_properties;
                  allowEnterPassword not:utool/getPortalObject/validate_email|nothing;
-				 rpx_view context/@@rpx_view;
-				 rpx_credentials rpx_view/rpx_credentials;
+                 rpx_view context/@@rpx_view;
+                 rpx_credentials rpx_view/rpx_credentials;
                  mailpw site_properties/validate_email;
                  mailconfigured python:allowEnterPassword or (mailhost and mailfrom)">
 
@@ -57,7 +57,7 @@
       <div class="row"
            tal:define="error errors/fullname| nothing;
                        rpx_fullname python:rpx_credentials.get('name', {}).get('formatted');
-					   fullname rpx_fullname | rewuest/fullname | nothing;"
+                       fullname rpx_fullname | rewuest/fullname | nothing;"
            tal:attributes="class python:test(error, 'field error', 'field')">
 
         <label for="fullname"
@@ -81,7 +81,7 @@
 
       <div class="field"
            tal:define="error errors/username| nothing;
-		               rpx_username python:rpx_credentials.get('preferredUsername');
+                       rpx_username python:rpx_credentials.get('preferredUsername');
                        username rpx_username | request/username | nothing;"
            tal:attributes="class python:test(error, 'field error', 'field')">
 

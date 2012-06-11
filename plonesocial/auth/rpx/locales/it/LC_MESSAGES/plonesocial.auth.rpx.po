@@ -62,7 +62,7 @@ msgstr "Configurazione RPX"
 
 #: ./skins/rpx_skins/rpx_logged_in.cpy:40
 msgid "The RPX id was mapped to your user."
-msgstr "L'identificativo RPX era assegnato al tuo utente."
+msgstr "L'identificativo RPX è stato assegnato al tuo utente."
 
 #: ./skins/rpx_skins/join_form_validate.vpy:48
 #: ./skins/rpx_skins/register.cpy:36

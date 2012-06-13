@@ -4,7 +4,6 @@ from zope.formlib import form
 
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone import PloneMessageFactory as _
-from Products.Five import BrowserView
 
 
 def get_email(self):

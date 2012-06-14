@@ -27,7 +27,7 @@
 
         <div id="content-core">
             <p>Il processo di associazione del profilo social, che hai scelto, è completato.</p>
-            <p>Ora puoi <a href="/login">accedere a Facciamo</a> direttamente con questo profilo.</p>
+            <p>Ora puoi <a href="" tal:attributes="href string:${context/portal_url}/login">accedere a Facciamo</a> direttamente con questo profilo.</p>
         </div>
 
     </div>

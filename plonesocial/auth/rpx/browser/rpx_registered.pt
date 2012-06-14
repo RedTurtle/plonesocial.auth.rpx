@@ -17,17 +17,17 @@
     <div tal:omit-tag=""
          tal:condition="python: auth">
 
-        <h1 class="documentFirstHeading"
-            i18n:translate="heading_welcome">
-            Welcome!
+        <h1 class="documentFirstHeading">
+            Benvenuto in Facciamo!
         </h1>
 
-        <div class="documentDescription" i18n:translate="description_you_are_registered">
-            You have been registered.
+        <div class="documentDescription">
+            Hai completato la registrazione.
         </div>
 
         <div id="content-core">
-            <p>More information here...</p>
+            <p>Il processo di associazione del profilo social, che hai scelto, è completato.</p>
+            <p>Ora puoi <a href="/login">accedere a Facciamo</a> direttamente con questo profilo.</p>
         </div>
 
     </div>

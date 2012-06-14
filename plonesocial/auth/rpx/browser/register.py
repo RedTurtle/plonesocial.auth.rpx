@@ -32,6 +32,8 @@ class RegistrationForm(BaseForm):
     @property
     def form_fields(self):
         defaultFields = super(RegistrationForm, self).form_fields
+        if not defaultFields:
+            return defaultFields
         defaultFields.get('email').get_rendered = get_email
         defaultFields.get('fullname').get_rendered = get_fullname
         defaultFields.get('username').get_rendered = get_username

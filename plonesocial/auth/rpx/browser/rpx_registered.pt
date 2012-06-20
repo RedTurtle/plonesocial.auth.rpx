@@ -25,9 +25,13 @@
             Hai completato la registrazione.
         </div>
 
-        <div id="content-core">
+        <div id="content-core" tal:define="rpx_view context/@@rpx_view;">
             <p>Il processo di associazione del profilo social, che hai scelto, è completato.</p>
-            <p>Ora puoi <a href="" tal:attributes="href string:${context/portal_url}/login">accedere a Facciamo</a> direttamente con questo profilo.</p>
+            <p>Accedere a Facciamo direttamente con questo profilo:</p>
+
+            <div metal:use-macro="context/rpx_macros/macros/rpx_register_container" />
+
+
         </div>
 
     </div>

@@ -85,23 +85,24 @@ class RPXPlugin(BasePlugin):
                             self.REQUEST.RESPONSE, login, "")
                 return (user_id, login)
             else:
-                user_id = login = credentials.get('email')
-                member = ms_tool.getMemberById(login)
-                if not member:
-                    pr_tool = getToolByName(self, 'portal_registration')
-                    import random, string
-                    pr_tool.addMember(login, ''.join([random.choice(string.letters + string.digits) for i in range(8)]))
-                    member = ms_tool.getMemberById(login)
-                    credentials['fullname'] = credentials['name']['formatted']
-                    
-                self._getPAS().updateCredentials(self.REQUEST, self.REQUEST.RESPONSE, login, "")
-                rpx_ids = list(member.getProperty('rpx_identifier'))
-                rpx_ids.append(credentials['identifier'])
-                credentials['rpx_identifier'] = rpx_ids
-                credentials['home_page'] = credentials.get('url', '')
-                member.setMemberProperties(credentials)
-                
-                return (user_id, login)
+                return None
+                # user_id = login = credentials.get('email')
+                # member = ms_tool.getMemberById(login)
+                # if not member:
+                #     pr_tool = getToolByName(self, 'portal_registration')
+                #     import random, string
+                #     pr_tool.addMember(login, ''.join([random.choice(string.letters + string.digits) for i in range(8)]))
+                #     member = ms_tool.getMemberById(login)
+                #     credentials['fullname'] = credentials['name']['formatted']
+
+                # self._getPAS().updateCredentials(self.REQUEST, self.REQUEST.RESPONSE, login, "")
+                # rpx_ids = list(member.getProperty('rpx_identifier'))
+                # rpx_ids.append(credentials['identifier'])
+                # credentials['rpx_identifier'] = rpx_ids
+                # credentials['home_page'] = credentials.get('url', '')
+                # member.setMemberProperties(credentials)
+
+                # return (user_id, login)
         return None
 
 

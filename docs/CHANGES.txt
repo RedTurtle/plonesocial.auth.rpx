@@ -1,4 +1,15 @@
 
+0.10.0 - unreleased
+*******************
+
+- san lazzaro 2014 version [mircoangelini]
+- added 'telephone' field to the users [mircoangelini]
+- removed auto-add of the user of the authentication plugin [mircoangelini]
+- changed rpx_callback, we need to always compile the join form; now we redirect to the /@@rpx_register if the 'telephone' field is empty
+  [mircoangelini]
+- added /@@rpx_register view (join form inerith from the Plone one) that save the extra field [mircoangelini]
+
+
 0.9 - unreleased
 ****************
 
@@ -14,8 +25,8 @@
 
  - Added provider icons.
 
- - It is now possible to select providers in the configlet that will be shown as icons in the portlet. When clicking on 
-   an icon the rpx overlay opens with the according provider preselected.  
+ - It is now possible to select providers in the configlet that will be shown as icons in the portlet. When clicking on
+   an icon the rpx overlay opens with the according provider preselected.
 
 
 0.815 - (2010/03/15)

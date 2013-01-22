@@ -19,20 +19,28 @@ class RPXCallback(BrowserView):
         self.request = request
 
     def __call__(self):
-        if self.portal_membership.isAnonymousUser():
-            session = self.context.session_data_manager.getSessionData()
-            creds = session.get('rpx_credentials', {})
-            if not creds:
-                msg = u'RPX authentication has failed. Try again later. You can still register login with your Plone username.'
-                util = self.context.plone_utils
-                util.addPortalMessage(msg, 'error')
-            self.request.RESPONSE.redirect('%s/rpx_login_form' % self.portal.absolute_url())
+
+        # if self.portal_membership.isAnonymousUser():
+        #     session = self.context.session_data_manager.getSessionData()
+        #     creds = session.get('rpx_credentials', {})
+        #     if not creds:
+        #         msg = u'RPX authentication has failed. Try again later. You can still register login with your Plone username.'
+        #         util = self.context.plone_utils
+        #         util.addPortalMessage(msg, 'error')
+        #     self.request.RESPONSE.redirect('%s/@@rpx_register' % self.portal.absolute_url())
+
+        session = self.context.session_data_manager.getSessionData()
+        creds = session.get('rpx_credentials', {})
+        if creds:
+            member = self.portal_membership.getAuthenticatedMember()
+            if not member.getProperty('telephone'):
+                self.request.RESPONSE.redirect('%s/@@rpx_register' % self.portal.absolute_url())
+                return
+        url = self.request.get('came_from')
+        if url is not None:
+            self.request.RESPONSE.redirect(url[0])
         else:
-            url = self.request.get('came_from')
-            if url is not None:
-                self.request.RESPONSE.redirect(url[0])
-            else:
-                self.request.RESPONSE.redirect(self.portal.absolute_url())
+            self.request.RESPONSE.redirect(self.portal.absolute_url())
 
     @property
     def portal_membership(self):

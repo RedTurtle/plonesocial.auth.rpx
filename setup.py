@@ -8,7 +8,7 @@ from setuptools import setup, find_packages
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-version = '0.9'
+version = '0.10.0.dev0'
 
 long_description = (
     read('docs', 'README.txt')
@@ -62,7 +62,7 @@ setup(name='plonesocial.auth.rpx',
       extras_require=dict(tests=tests_require),
       test_suite = 'plonesocial.auth.rpx.tests.test_docs.test_suite',
       entry_points="""
-      # -*- entry_points -*- 
+      # -*- entry_points -*-
       [z3c.autoinclude.plugin]
       target = plone
       """,

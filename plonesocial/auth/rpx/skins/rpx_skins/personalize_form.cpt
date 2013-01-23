@@ -216,6 +216,31 @@
                         </div>
 
                         <div class="field"
+                             tal:define="error errors/telephone | nothing;
+                                         telephone python:request.get('telephone', member.getProperty('telephone', ''));"
+                             tal:attributes="class python:test(error, 'field error', 'field')">
+
+                            <label for="telephone"
+                                   i18n:domain="plonesocial.auth.rpx"
+                                   i18n:translate="label_telephone">Phone Number</label>
+
+                            <div class="formHelp" i18n:translate="help_telephone">
+                            Insert your phone number.
+                            </div>
+
+                            <div tal:content="error">Validation error output</div>
+
+                            <input type="text"
+                                   id="telephone"
+                                   name="telephone"
+                                   size="25"
+                                   tal:attributes="value telephone;
+                                                   disabled python:member.canWriteProperty('telephone') and default or 'disabled'"
+                                   />
+
+                        </div>
+
+                        <div class="field"
                              tal:define="error errors/home_page | nothing;
                                          home_page python:request.get('home_page', member.getProperty('home_page', ''));"
                              tal:attributes="class python:test(error, 'field error', 'field')">

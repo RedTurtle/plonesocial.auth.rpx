@@ -3,31 +3,34 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       metal:use-macro="context/main_template/macros/master"
-      i18n:domain="plone">
+      i18n:domain="plonesocial.auth.rpx">
 <body>
 
 
 <metal:main fill-slot="main"
      tal:define="auth nocall:context/acl_users/credentials_cookie_auth|nothing">
 
-    <div id="content-core" tal:condition="python: not auth" i18n:translate="registered_disabled">
+    <div id="content-core" tal:condition="python: not auth" i18n:domain="plone" i18n:translate="registered_disabled">
            Cookie authentication has been disabled.
     </div>
 
     <div tal:omit-tag=""
          tal:condition="python: auth">
 
-        <h1 class="documentFirstHeading">
-            Benvenuto in Facciamo!
+        <h1 class="documentFirstHeading"
+            i18n:domain="plone"
+            i18n:translate="heading_welcome">
+            Welcome!
         </h1>
 
-        <div class="documentDescription">
-            Hai completato la registrazione.
+        <div class="documentDescription"
+             i18n:translate="description_you_are_registered">
+            You have successfully registered.
         </div>
 
         <div id="content-core" tal:define="rpx_view context/@@rpx_view;">
-            <p>Il processo di associazione del profilo social, che hai scelto, è completato.</p>
-            <p>Accedere a Facciamo direttamente con questo profilo:</p>
+            <p i18n:translate="rpx_creation_profile_completed">The process of binding the social profile, you choose, is completed.</p>
+            <p i18n:translate="rpx_access_with_profile">Now you can access directly with this profile:</p>
 
             <div metal:use-macro="context/rpx_macros/macros/rpx_register_container" />
 

@@ -8,6 +8,8 @@
 - changed rpx_callback, we need to always compile the join form; now we redirect to the /@@rpx_register if the 'telephone' field is empty
   [mircoangelini]
 - added /@@rpx_register view (join form inerith from the Plone one) that save the extra field [mircoangelini]
+- added telephone into the old personalize_form [mircoangelini]
+- upgraded italian translation [mircoangelini]
 
 
 0.9 - unreleased

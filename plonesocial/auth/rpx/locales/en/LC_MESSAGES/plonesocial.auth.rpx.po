@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-02-22 17:15+0000\n"
+"POT-Creation-Date: 2013-01-23 15:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,10 +13,6 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
-
-#: ./browser/configlet.py:45
-msgid "Enter your RPX api key"
-msgstr ""
 
 #: ./skins/rpx_skins/login_form_validate.vpy:47
 #: ./skins/rpx_skins/rpx_logged_in.cpy:19
@@ -52,12 +48,16 @@ msgstr ""
 msgid "Please enter your password."
 msgstr ""
 
-#: ./browser/configlet.py:46
+#: ./browser/configlet.py:19
+msgid "RPX Providers"
+msgstr ""
+
+#: ./browser/configlet.py:62
 msgid "RPX Settings"
 msgstr ""
 
-#: ./browser/configlet.py:44
-msgid "RPX settings"
+#: ./browser/configlet.py:20
+msgid "Selected providers will be shown in the RPX portlet"
 msgstr ""
 
 #: ./skins/rpx_skins/rpx_logged_in.cpy:40
@@ -85,6 +85,14 @@ msgstr ""
 msgid "User added."
 msgstr ""
 
+#: ./skins/rpx_skins/rpx_macros.pt:6
+msgid "Warning"
+msgstr ""
+
+#: ./browser/configlet.py:63
+msgid "You can find your RPX settings under your RPX account at http://RPXnow.com"
+msgstr ""
+
 #: ./skins/rpx_skins/login_form_validate.vpy:21
 msgid "You must enable cookies before you can log in."
 msgstr ""
@@ -93,14 +101,104 @@ msgstr ""
 msgid "Your personal settings have been saved."
 msgstr ""
 
-#. Default: "RPX-Authentication"
+#. Default: "You have successfully registered."
+#: ./browser/rpx_registered.pt:26
+msgid "description_you_are_registered"
+msgstr ""
+
+#. Default: "Check this to have your user name filled in automatically when you log in later."
+#: ./skins/rpx_skins/rpx_macros.pt:130
+msgid "help_remember_my_name"
+msgstr ""
+
+#. Default: "Log in"
+#: ./skins/rpx_skins/rpx_macros.pt:139
+msgid "label_log_in"
+msgstr ""
+
+#. Default: "Login Name"
+#: ./skins/rpx_skins/rpx_macros.pt:87
+msgid "label_login_name"
+msgstr ""
+
+#. Default: "Password"
+#: ./skins/rpx_skins/rpx_macros.pt:105
+msgid "label_password"
+msgstr ""
+
+#. Default: "Register"
+#: ./browser/register.py:57
+msgid "label_register"
+msgstr ""
+
+#. Default: "Remember my name."
+#: ./skins/rpx_skins/rpx_macros.pt:128
+msgid "label_remember_my_name"
+msgstr ""
+
+#. Default: "Phone Number"
+#: ./skins/rpx_skins/personalize_form.cpt:223
+msgid "label_telephone"
+msgstr ""
+
+#. Default: "Register"
+#: ./skins/rpx_skins/rpx_macros.pt:40
+msgid "register_button"
+msgstr ""
+
+#. Default: "Now you can access directly with this profile:"
+#: ./browser/rpx_registered.pt:33
+msgid "rpx_access_with_profile"
+msgstr ""
+
+#. Default: "Login"
+#: ./skins/rpx_skins/rpx_macros.pt:64
+msgid "rpx_assign_legend"
+msgstr ""
+
+#. Default: "The process of binding the social profile, you choose, is completed."
+#: ./browser/rpx_registered.pt:32
+msgid "rpx_creation_profile_completed"
+msgstr ""
+
+#. Default: "You have already registered to ${rpx_portal_title} and now want to assign your ${rpx_provider} account to your profile."
+#: ./skins/rpx_skins/rpx_macros.pt:67
+msgid "rpx_login_descr"
+msgstr ""
+
+#. Default: "Log in with online id"
+#: ./skins/rpx_skins/rpx_macros.pt:18
+msgid "rpx_login_header"
+msgstr ""
+
+#. Default: "RPX log in"
+#: ./skins/rpx_skins/rpx_macros.pt:62
+msgid "rpx_login_legend"
+msgstr ""
+
+#. Default: "RPX is not configured. Please go to \"RPX Settings\" in \"Site Setup\" to fix this."
+#: ./skins/rpx_skins/rpx_macros.pt:9
+msgid "rpx_not_configured_warning"
+msgstr ""
+
+#. Default: "Sign in with"
 #: ./portlets/rpxportlet.pt:7
 msgid "rpx_portlet_header"
 msgstr ""
 
-#. Default: "Sign In"
-#: ./portlets/rpxportlet.pt:20
-msgid "rpx_portlet_signin"
+#. Default: "The prefilled data was returned by your online id provider and is just a suggestion."
+#: ./skins/rpx_skins/rpx_macros.pt:37
+msgid "rpx_register_descr"
+msgstr ""
+
+#. Default: "Register your ${rpx_provider} account"
+#: ./skins/rpx_skins/rpx_macros.pt:35
+msgid "rpx_register_heading"
+msgstr ""
+
+#. Default: "RPX register"
+#: ./skins/rpx_skins/rpx_macros.pt:34
+msgid "rpx_register_legend"
 msgstr ""
 
 #. Default: "Failed to create your account: we were unable to send your password to your email address: ${address}"

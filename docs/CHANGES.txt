@@ -1,5 +1,5 @@
 
-0.10.0 - unreleased
+0.10.0 (2013-01-24)
 *******************
 
 - san lazzaro 2014 version [mircoangelini]

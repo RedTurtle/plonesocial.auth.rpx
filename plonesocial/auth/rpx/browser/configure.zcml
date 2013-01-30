@@ -5,6 +5,8 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="plonesocial.auth.rpx">
 
+    <include package="z3c.jbot" file="meta.zcml" />
+
     <browser:resource
         file="rpx.js"
         name="rpx.js"
@@ -15,10 +17,15 @@
         name="rpx.css"
         />
 
-	<browser:resourceDirectory
-		name="plonesocial.auth.rpx.icons"
-		directory="icons"
-		/>
+    <browser:resourceDirectory
+      name="plonesocial.auth.rpx.icons"
+      directory="icons"
+      />
+
+    <!-- uso di jbot per i template di portlets -->
+    <browser:jbot
+      directory="./portlets"
+      layer="plonesocial.auth.rpx.interface.IRPXAuthLayer" />
 
     <!-- RPX View -->
     <browser:page
@@ -42,6 +49,32 @@
         allowed_interface=".rpx_view.IRPXView"
         permission="zope.Public"
         />
+
+    <!-- RPX personal information view -->
+    <browser:page
+        for="plone.app.layout.navigation.interfaces.INavigationRoot"
+        name="personal-information"
+        class=".personalpreferences.RPXUserDataPanel"
+        permission="cmf.SetOwnProperties"
+        layer="plonesocial.auth.rpx.interface.IRPXAuthLayer"
+      />
+
+    <browser:page
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      name="user-information"
+      class=".personalpreferences.RPXUserDataConfiglet"
+      permission="plone.app.controlpanel.UsersAndGroups"
+      layer="plonesocial.auth.rpx.interface.IRPXAuthLayer"
+      />
+
+    <adapter
+      provides=".userdataschema.IRPXUserDataSchema"
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      factory=".personalpreferences.RPXUserDataPanelAdapter"
+      />
+
+    <utility provides=".userdataschema.IRPXUserDataSchemaProvider"
+             factory=".userdataschema.RPXUserDataSchemaProvider"/>
 
     <!-- RPX-Callback View -->
     <browser:page

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-01-23 15:24+0000\n"
+"POT-Creation-Date: 2013-01-30 09:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Nicola\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,7 +12,11 @@ msgstr ""
 "Language-Code: it\n"
 "Language-Name: Italian\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: DOMAIN\n"
+"Domain: plonesocial.auth.rpx\n"
+
+#: ./skins/rpx_skins/login_form.cpt:42
+msgid "Error"
+msgstr "Errore"
 
 #: ./skins/rpx_skins/login_form_validate.vpy:47
 #: ./skins/rpx_skins/rpx_logged_in.cpy:19
@@ -101,27 +105,51 @@ msgstr "I tuoi dati personali sono stati salvati con successo."
 msgid "Your personal settings have been saved."
 msgstr "Le tue impostazioni personali sono state salvate."
 
+#. Default: "Forgot your password?"
+#: ./skins/rpx_skins/login_form.cpt:152
+msgid "box_forgot_password_option"
+msgstr "Hai dimenticato la tua password?"
+
 #. Default: "You have successfully registered."
 #: ./browser/rpx_registered.pt:26
 msgid "description_you_are_registered"
 msgstr "Hai completato la registrazione."
 
+#. Default: "Cookies are not enabled. You must enable cookies before you can log in."
+#: ./skins/rpx_skins/login_form.cpt:45
+msgid "enable_cookies_message_before_login"
+msgstr "I cookie non sono abilitati. Devi abilitarli per poterti autenticare."
+
+#. Default: "If you have forgotten your password, ${click_here}."
+#: ./skins/rpx_skins/login_form.cpt:157
+msgid "help_password_retrieval"
+msgstr "Se hai dimenticato la tua password, ${click_here}."
+
 #. Default: "Check this to have your user name filled in automatically when you log in later."
+#: ./skins/rpx_skins/login_form.cpt:132
 #: ./skins/rpx_skins/rpx_macros.pt:130
 msgid "help_remember_my_name"
 msgstr "Spunta qui per avere il tuo nome utente inserito automaticamente la prossima volta che effettuerai l'accesso"
 
+#. Default: "we can send you a new one"
+#: ./skins/rpx_skins/login_form.cpt:158
+msgid "label_click_here_to_retrieve"
+msgstr "possiamo spedirtene una nuova"
+
 #. Default: "Log in"
+#: ./skins/rpx_skins/login_form.cpt:141
 #: ./skins/rpx_skins/rpx_macros.pt:139
 msgid "label_log_in"
 msgstr "Accedi"
 
 #. Default: "Login Name"
+#: ./skins/rpx_skins/login_form.cpt:89
 #: ./skins/rpx_skins/rpx_macros.pt:87
 msgid "label_login_name"
 msgstr "Nome di accesso"
 
 #. Default: "Password"
+#: ./skins/rpx_skins/login_form.cpt:107
 #: ./skins/rpx_skins/rpx_macros.pt:105
 msgid "label_password"
 msgstr "Password"
@@ -132,6 +160,7 @@ msgid "label_register"
 msgstr "Iscriviti"
 
 #. Default: "Remember my name."
+#: ./skins/rpx_skins/login_form.cpt:130
 #: ./skins/rpx_skins/rpx_macros.pt:128
 msgid "label_remember_my_name"
 msgstr "Ricorda il mio nome."
@@ -140,6 +169,21 @@ msgstr "Ricorda il mio nome."
 #: ./skins/rpx_skins/personalize_form.cpt:223
 msgid "label_telephone"
 msgstr "Numero di telefono"
+
+#. Default: "While cookie authentication is disabled, cookie-based login is not available."
+#: ./skins/rpx_skins/login_form.cpt:50
+msgid "login_form_disabled"
+msgstr "Finchè i cookie sono disabilitati, l'autenticazione non è disponibile."
+
+#. Default: "If you don't have an account from any of the available providers, you can also use a Plone account."
+#: ./skins/rpx_skins/login_form.cpt:57
+msgid "login_form_orploneaccount"
+msgstr "Se non disponi di un account per uno dei provider disponibili, puoi anche utilizzare un account Plone."
+
+#. Default: "Login with Plone"
+#: ./skins/rpx_skins/login_form.cpt:71
+msgid "login_with_plone"
+msgstr "Login con Plone"
 
 #. Default: "Register"
 #: ./skins/rpx_skins/rpx_macros.pt:40
@@ -183,7 +227,6 @@ msgstr "RPX non è configurato. Si prega di andare alla \"Configurazione RPX\" n
 
 #. Default: "Sign in with"
 #: ./portlets/rpxportlet.pt:7
-#, fuzzy
 msgid "rpx_portlet_header"
 msgstr "Autenticazione RPX"
 

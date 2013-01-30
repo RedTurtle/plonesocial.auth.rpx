@@ -2,7 +2,9 @@
 0.10.1 (unreleased)
 *******************
 
-- Nothing changed yet.
+- added thelephone field into the new view of user information [mircoangelini]
+- removed sign-in link into login and loguot form, login portlet and personal-tools [mircoangelini]
+- upgraded italian translations [mircoangelini]
 
 
 0.10.0 (2013-01-24)
@@ -15,7 +17,7 @@
   [mircoangelini]
 - added /@@rpx_register view (join form inerith from the Plone one) that save the extra field [mircoangelini]
 - added telephone into the old personalize_form [mircoangelini]
-- upgraded italian translation [mircoangelini]
+- upgraded italian translations [mircoangelini]
 
 
 0.9 - unreleased

@@ -57,6 +57,7 @@ setup(name='plonesocial.auth.rpx',
       install_requires=['setuptools',
                         # -*- Extra requirements: -*-
                         'simplejson',
+                        'z3c.jbot',
                         ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),

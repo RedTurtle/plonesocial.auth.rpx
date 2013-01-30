@@ -1,6 +1,5 @@
 from Products.PluggableAuthService.interfaces.plugins import IExtractionPlugin, IAuthenticationPlugin
 from zope.interface import Interface
-from zope import schema
 
 
 class IRPXExtractionPlugin(IExtractionPlugin):
@@ -20,3 +19,7 @@ class IRpxHelper(# -*- implemented plugins -*-
                                 ):
     """interface for RpxHelper."""
 
+class IRPXAuthLayer(Interface):
+    """
+    A layer marker interface
+    """
